@@ -1,0 +1,78 @@
+.dashboard {
+  font-family: Arial, sans-serif;
+  min-height: 100vh;
+  background: #f5f5f5;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header stays at top */
+.header {
+  background-color: #0070f3;
+  color: white;
+  padding: 16px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Optional logo/title styling */
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.menu {
+  position: relative;
+  cursor: pointer;
+  font-size: 24px;
+}
+
+.dropdown {
+  position: absolute;
+  right: 0;
+  top: 40px;
+  background: white;
+  color: black;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  display: none;
+  flex-direction: column;
+  min-width: 120px;
+}
+
+.menu:hover .dropdown {
+  display: flex;
+}
+
+.dropdown p {
+  padding: 8px 12px;
+  margin: 0;
+  cursor: pointer;
+}
+
+.dropdown p:hover {
+  background-color: #eee;
+}
+
+/* Middle content */
+.main {
+  flex: 1; /* take remaining height */
+  padding: 24px;
+  display: flex;
+  justify-content: center; /* center horizontally */
+  align-items: center; /* center vertically */
+}
+
+/* Logout button */
+.logoutButton {
+  background-color: #ff4d4f;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.logoutButton:hover {
+  background-color: #ff7875;
+}

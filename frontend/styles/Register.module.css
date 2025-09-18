@@ -1,0 +1,210 @@
+/* --- Paste this entire block to replace your existing CSS file --- */
+.pageGifBg {
+  min-height: 100vh;
+  position: relative;
+  overflow: hidden;
+  background: rgb(128, 127, 127);
+}
+
+.centeredContent {
+  position: relative;
+  z-index: 1;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem 0;
+}
+
+.loginCard {
+  background: rgb(255, 255, 255);
+  border-radius: 18px;
+  box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.08);
+  border: 1.5px solid #fff;
+  width: 470px;
+  height: auto;
+  padding: 2rem;
+}
+
+.loginTitle {
+  font-family: 'Inter', Arial, sans-serif;
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 1.3rem;
+  text-align: center;
+}
+
+.loginForm {
+  display: flex;
+  flex-direction: column;
+  gap: 1.3rem;
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.inputLabel {
+  color: #101010;
+  font-family: 'Inter', Arial, sans-serif;
+  font-size: 1.1rem;
+  font-weight: 500;
+  margin-left: 20px;
+}
+
+.input {
+  width: 90%;
+  height: 3.2rem;
+  border-radius: 1rem;
+  border: 1.5px solid #111;
+  font-size: 1rem;
+  color: #232323;
+  padding: 0 1rem;
+  font-family: 'Inter', Arial, sans-serif;
+  font-weight: 600;
+  margin: 0 auto;
+  display: block;
+  box-sizing: border-box; /* Important for consistent sizing */
+}
+
+/* --- THE FIX FOR INPUT SIZES --- */
+.passwordWrapper {
+  position: relative;
+  width: 90%; /* Match the width of other inputs */
+  margin: 0 auto; /* Center it */
+}
+
+.passwordWrapper .input {
+  width: 100%; /* Make the input fill its wrapper */
+}
+/* --- END OF FIX --- */
+
+.toggleEye {
+  position: absolute;
+  top: 50%;
+  right: 1rem;
+  transform: translateY(-50%);
+  cursor: pointer;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+}
+
+.button, .googleButton {
+  width: 70%;
+  height: 3.2rem;
+  border-radius: 1rem;
+  border: 1.5px solid #222;
+  font-size: 1.1rem;
+  font-family: 'Inter', Arial, sans-serif;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.18s, color 0.18s;
+  margin: 0.1rem auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none; /* For the 'a' tag google button */
+}
+
+.button {
+  background: #000;
+  color: #fff;
+}
+
+.button:hover, .button:active {
+  background: #fff;
+  color: #000;
+}
+
+.googleButton {
+  background: #fff;
+  color: #000;
+  gap: 0.7em;
+}
+
+.googleButton:hover {
+  background: #f1f1f1;
+}
+
+.divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin: 0.3rem 0;
+  color: #202020;
+}
+
+.dividerLine {
+  flex-grow: 1;
+  height: 1.5px;
+  background: #ddd;
+}
+
+.passwordStrengthContainer {
+  width: 90%;
+  margin: -5px auto 15px auto;
+}
+
+.strengthBarWrapper {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+
+.strengthBar {
+  flex-grow: 1;
+  height: 8px;
+  background-color: #e0e0e0;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.strengthIndicator {
+  height: 100%;
+  width: 0%;
+  transition: width 0.3s ease, background-color 0.3s ease;
+}
+
+.strengthIndicator.strength-weak { width: 33%; background-color: #ff4d4d; }
+.strengthIndicator.strength-medium { width: 66%; background-color: #ff9d4d; }
+.strengthIndicator.strength-strong { width: 100%; background-color: #4dff4d; }
+
+.strengthText { font-size: 0.8rem; font-weight: bold; }
+.strengthText-weak { color: #ff4d4d; }
+.strengthText-medium { color: #ff9d4d; }
+.strengthText-strong { color: #4dff4d; }
+
+.validationList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  font-size: 0.8rem;
+  color: #666;
+}
+
+.validationList li { margin-bottom: 4px; }
+.validationList li.valid { color: #4dff4d; text-decoration: line-through; }
+
+.errorMessage, .successMessage {
+  text-align: center;
+  margin-top: 10px;
+}
+.errorMessage { color: red; }
+.successMessage { color: green; }
+
+.signupLink {
+  text-align: center;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.link {
+  color: #4877f5;
+  text-decoration: underline;
+  font-weight: 600;
+}

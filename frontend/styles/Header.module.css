@@ -1,0 +1,143 @@
+/* Header Container */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 40px;
+  background: #fff;
+  border-bottom: 1px solid #ddd;
+}
+
+/* Logo */
+.logo {
+  font-size: 22px;
+  font-weight: bold;
+}
+
+/* Navigation */
+.nav {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+/* Dropdown */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropbtn {
+  background: none;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.dropdownContent {
+  display: none;
+  position: absolute;
+  top: 30px;
+  left: 0;
+  background-color: white;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+  border-radius: 6px;
+  z-index: 10;
+}
+
+.dropdownContent a {
+  display: block;
+  padding: 10px 15px;
+  text-decoration: none;
+  color: #333;
+  font-size: 14px;
+}
+
+.dropdownContent a:hover {
+  background-color: #f1f1f1;
+}
+
+/* Show dropdown on hover */
+.dropdown:hover .dropdownContent {
+  display: block;
+}
+
+/* Buttons */
+.actions {
+  display: flex;
+  gap: 10px;
+}
+
+.loginButton {
+  padding: 8px 16px;
+  border: 1px solid #333;
+  border-radius: 6px;
+  text-decoration: none;
+  color: #333;
+}
+
+.getStartedButton {
+  padding: 8px 16px;
+  background-color: #0070f3;
+  color: white;
+  border-radius: 6px;
+  text-decoration: none;
+}
+
+/* Grid inside dropdown */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(150px, 1fr)); /* 2 vertical columns */
+  gap: 14px 40px; /* spacing between rows & columns */
+}
+
+.grid a {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  color: #333;
+  font-size: 14px;
+}
+
+.grid a:hover {
+  color: #0070f3;
+}
+
+/* Hero container */
+.heroContainer {
+  position: relative;
+  width: 100%;
+  height: 100vh; /* full height */
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center; /* center slide content */
+}
+
+/* Dots navigation in the middle */
+.dotsNav {
+  position: absolute;
+  top: 50%; /* middle of screen */
+  left: 50%;
+  transform: translate(-50%, -50%); /* perfect center */
+  display: flex;
+  gap: 12px;
+  cursor: pointer;
+}
+
+.dot {
+  font-size: 24px;
+  color: #aaa;
+  transition: color 0.3s ease;
+}
+
+.activeDot {
+  color: #000; /* active dot color */
+}
+
+.dot:hover {
+  color: #555; /* hover effect */
+}

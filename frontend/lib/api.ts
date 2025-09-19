@@ -2,7 +2,7 @@ import axios from 'axios';
 
 // Create an Axios instance
 const api = axios.create({
-  baseURL: 'http://localhost:3000', // Your backend URL
+  baseURL: 'http://localhost:4000', // Your backend URL
   withCredentials: true, // This is crucial for sending cookies automatically
 });
 

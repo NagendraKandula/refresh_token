@@ -39,7 +39,7 @@ export class AuthService {
 
   private async storeRefreshToken(userId: number, token: string) {
     const expiresAt = new Date();
-    expiresAt.setDate(expiresAt.getDate() + 7);
+    expiresAt.setDate(expiresAt.getMinutes() + 10);
 
     await this.prisma.refreshToken.create({
       data: {
@@ -55,14 +55,14 @@ export class AuthService {
       httpOnly: true,
       secure: process.env.NODE_ENV !== 'development',
       sameSite: 'lax',
-      expires: new Date(Date.now() + 15 * 60 * 1000), // 15 minutes
+      expires: new Date(Date.now() + 2 * 60 * 1000), // 15 minutes
     });
 
     res.cookie('refresh_token', refreshToken, {
       httpOnly: true,
       secure: process.env.NODE_ENV !== 'development',
       sameSite: 'lax',
-      expires: new Date(Date.now() + 7 * 24 * 60 * 60 * 1000), // 7 days
+      expires: new Date(Date.now() + 10 * 60 * 1000), // 7 days
     });
   }
 

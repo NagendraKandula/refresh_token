@@ -6,7 +6,8 @@ import { PrismaModule } from '../prisma/prisma.module';
 import { JwtModule } from '@nestjs/jwt';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import { JwtStrategy } from './jwt.strategy';
-import { GoogleStrategy } from './google.strategy'; // <-- Import GoogleStrategy
+import { GoogleStrategy } from './google.strategy'; 
+import { JwtRefreshTokenStrategy }  from './jwt-refresh.strategy';// <-- Import GoogleStrategy
 
 @Module({
   imports: [
@@ -15,13 +16,14 @@ import { GoogleStrategy } from './google.strategy'; // <-- Import GoogleStrategy
       imports: [ConfigModule],
       useFactory: async (configService: ConfigService) => ({
         secret: configService.get<string>('JWT_SECRET'),
-        signOptions: { expiresIn: '60m' },
+        signOptions: { expiresIn: '2m' },
       }),
       inject: [ConfigService],
     }),
+    ConfigModule,
   ],
   controllers: [AuthController],
-  providers: [AuthService, JwtStrategy, GoogleStrategy], // <-- Add GoogleStrategy
+  providers: [AuthService, JwtStrategy, GoogleStrategy,JwtRefreshTokenStrategy], // <-- Add GoogleStrategy
   exports: [AuthService, JwtModule], 
 })
 export class AuthModule {}
